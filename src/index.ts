@@ -33,10 +33,14 @@ function logDetails(value:User|Author):void{
   if(value.type==='user'){
     console.log(value.email, value.userName)
   }
-  if(value.type=='author'){
+  if(value.type==='author'){
     console.log(value.book, value.authorName)
   }
 }
+const AuthorOne:Author={authorName:'Chit Oo Nyo', book:'Linka Dipa Chit Thu', id:12, type:'author'}
+const UserOne:User={userName:'Mg Nyo', email:'mgnyo@gmail.com', id:202, type:'user'}
+
+logDetails(AuthorOne)
 
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js

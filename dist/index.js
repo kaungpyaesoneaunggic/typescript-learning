@@ -15,9 +15,12 @@ function logDetails(value) {
     if (value.type === 'user') {
         console.log(value.email, value.userName);
     }
-    if (value.type == 'author') {
+    if (value.type === 'author') {
         console.log(value.book, value.authorName);
     }
 }
+const AuthorOne = { authorName: 'Chit Oo Nyo', book: 'Linka Dipa Chit Thu', id: 12, type: 'author' };
+const UserOne = { userName: 'Mg Nyo', email: 'mgnyo@gmail.com', id: 202, type: 'user' };
+logDetails(AuthorOne);
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js
