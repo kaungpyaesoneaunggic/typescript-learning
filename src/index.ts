@@ -1,29 +1,40 @@
-let fname:string;
-let age:number;
-let isSingle:boolean;
+// arrays
+let names: string[] = ["Kaung", "Pyae", "Sone", "Aung"];
+let ages: number[] = [22, 21, 20];
 
-fname='Kaung Pyae';
-age=22;
-isSingle=true;
+names.push("Maung");
+ages.push(35);
+
+// type of interface with arrays
+
+let fruits = ["apples", "pears", "bananas", "mangoes"];
+fruits.push("strawberries");
+
+const f = fruits[3];
+let things = [1, true, "ohayou"];
+const t = things[0];
+
+// object literals
+
+let user: { firstName: string; age: number; id: number } = {
+  firstName: "Kyaw Kyaw",
+  age: 21,
+  id: 12345,
+  // isFictional:true Can't assign
+};
+user.id=2120;
+// user.email='kaung@gmail.com' can't assign
+
+let person={
+  name:'Win Win',
+  score: 35,
+}
+person.name='Soe Moe';
+person.score=100;
+const score= person.score;
 
 
-let planet = 'Earth';
-let moons = 1;
-let isLarge = false;
 
-planet='Saturn';
-moons = 145;
-isLarge=true;
-
-console.log(moons)
-
-//null & undefinend;
-// loced in and will never be changed
-let nullItem:null;
-let undefinendItem:undefined;
-
-nullItem=null;
-undefinendItem=undefined;
 
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js
