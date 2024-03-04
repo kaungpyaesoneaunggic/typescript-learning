@@ -1,31 +1,24 @@
-// Functions
+// any types
+let age:any
+age=3;
+age='Heart'
+age=true;
 
-function addTwoNumbers(a:number,b:number):number{
-  return a+b;
-}
-const subtractTwoNumbers=(a:number, b:number):number=>{
-  return a-b;
-}
-
-addTwoNumbers(4,5);
-subtractTwoNumbers(1,6);
-
-const addAllNumbers=(items:number[]):void=>{
-  const total =items.reduce((a,c)=>a+c,0)
-  console.log(total)
+let title;
+title=25;
+title={
+  hello:'world' 
 }
 
-addAllNumbers([5,7,3,14,4,11,2,10])
+// any types in array
+let things:any[]=['hello', true,35]
+things.push(true);
 
-// Return Type Interface
-const formatGreeting=(name:string,greeting:string):string=>{
-  return `${greeting}, ${name}さん`;
+// funcions & any
+function addTogether(value:any):any{
+  return value+value;
 }
-const greetingOne = formatGreeting('Kyaw Kyaw', 'Ohayou Gozaimasu');
-console.log(greetingOne);
-
-
-
+console.log(addTogether('hello'))
 
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js
