@@ -1,28 +1,26 @@
-// Type Aliases
-// e.g Tuples
-type Rgb = [number,number,number];
-function getRandomColor():Rgb{
-  const red = Math.floor(Math.random()*255); //meaning it will return from 1 to 255
-  const green = Math.floor(Math.random()*255);
-  const blue = Math.floor(Math.random()*255);
-  return[red,green,blue];
-}
-const colorOne = getRandomColor();
-const colorTwo = getRandomColor();
-console.log(colorOne,colorTwo);
+// Union Types
+//Having multiple types
+let someId: number | string;
+someId = 1;
+someId = "hello";
+// someId=true //throwError
 
-// e.g Object Literals
-type User={
-  name:string,
-  score:number,
-}
+let email: string | null = null;
+email = "helloeuser@gmail.com";
+email = null;
 
-const userOne:User ={name:'UserOne',score:80}
-function formatUser(user:User):void{
-  console.log(`${user.name} has a score of ${user.score}`)
+// alias type
+type Id = number | string;
+let userId: Id;
+userId = "asfldasdf";
+userId = 1232223;
+
+// Union Type Pitfall
+function swapIdType(id: Id): Id {
+  // parseInt(id) //This function doesn't work because TS donesn't know if it is either string or number
+  return id;
 }
-formatUser(userOne);
-formatUser({name:'UserTwo',score:90})
+swapIdType(userId);
 
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js

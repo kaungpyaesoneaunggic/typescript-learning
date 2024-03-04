@@ -1,18 +1,21 @@
 "use strict";
-function getRandomColor() {
-    const red = Math.floor(Math.random() * 255); //meaning it will return from 1 to 255
-    const green = Math.floor(Math.random() * 255);
-    const blue = Math.floor(Math.random() * 255);
-    return [red, green, blue];
+// Union Types
+//Having multiple types
+let someId;
+someId = 1;
+someId = "hello";
+// someId=true //throwError
+let email = null;
+email = "helloeuser@gmail.com";
+email = null;
+let userId;
+userId = "asfldasdf";
+userId = 1232223;
+// Union Type Pitfall
+function swapIdType(id) {
+    // parseInt(id) //This function doesn't work because TS donesn't know if it is either string or number
+    return id;
 }
-const colorOne = getRandomColor();
-const colorTwo = getRandomColor();
-console.log(colorOne, colorTwo);
-const userOne = { name: 'UserOne', score: 80 };
-function formatUser(user) {
-    console.log(`${user.name} has a score of ${user.score}`);
-}
-formatUser(userOne);
-formatUser({ name: 'UserTwo', score: 90 });
+swapIdType(userId);
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js
