@@ -1,17 +1,19 @@
 "use strict";
-let pname = 'Kyaw Kyaw';
-let number = 21;
-let single = true;
-let students = [
-    'Kyaw Kyaw',
-    'Naing Naing',
-];
-students.push('Soe Soe');
-console.log(students);
-let studentsInfo = {
-    fname: 'Kyaw Kyaw',
-    age: 18,
-    married: false
-};
-studentsInfo.age = 'lunch';
-console.log(studentsInfo);
+let fname;
+let age;
+let isSingle;
+fname = 'Kaung Pyae';
+age = 22;
+isSingle = true;
+let planet = 'Earth';
+let moons = 1;
+let isLarge = false;
+planet = 'Saturn';
+moons = 145;
+isLarge = true;
+//null & undefinend;
+// loced in and will never be changed
+let nullItem;
+let undefinendItem;
+nullItem = null;
+undefinendItem = undefined;
