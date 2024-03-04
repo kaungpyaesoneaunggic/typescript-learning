@@ -1,30 +1,23 @@
 "use strict";
-// arrays
-let names = ["Kaung", "Pyae", "Sone", "Aung"];
-let ages = [22, 21, 20];
-names.push("Maung");
-ages.push(35);
-// type of interface with arrays
-let fruits = ["apples", "pears", "bananas", "mangoes"];
-fruits.push("strawberries");
-const f = fruits[3];
-let things = [1, true, "ohayou"];
-const t = things[0];
-// object literals
-let user = {
-    firstName: "Kyaw Kyaw",
-    age: 21,
-    id: 12345,
-    // isFictional:true Can't assign
+// Functions
+function addTwoNumbers(a, b) {
+    return a + b;
+}
+const subtractTwoNumbers = (a, b) => {
+    return a - b;
 };
-user.id = 2120;
-// user.email='kaung@gmail.com' can't assign
-let person = {
-    name: 'Win Win',
-    score: 35,
+addTwoNumbers(4, 5);
+subtractTwoNumbers(1, 6);
+const addAllNumbers = (items) => {
+    const total = items.reduce((a, c) => a + c, 0);
+    console.log(total);
 };
-person.name = 'Soe Moe';
-person.score = 100;
-const score = person.score;
+addAllNumbers([5, 7, 3, 14, 4, 11, 2, 10]);
+// Return Type Interface
+const formatGreeting = (name, greeting) => {
+    return `${greeting}, ${name}さん`;
+};
+const greetingOne = formatGreeting('Kyaw Kyaw', 'Ohayou Gozaimasu');
+console.log(greetingOne);
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js

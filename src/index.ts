@@ -1,37 +1,28 @@
-// arrays
-let names: string[] = ["Kaung", "Pyae", "Sone", "Aung"];
-let ages: number[] = [22, 21, 20];
+// Functions
 
-names.push("Maung");
-ages.push(35);
-
-// type of interface with arrays
-
-let fruits = ["apples", "pears", "bananas", "mangoes"];
-fruits.push("strawberries");
-
-const f = fruits[3];
-let things = [1, true, "ohayou"];
-const t = things[0];
-
-// object literals
-
-let user: { firstName: string; age: number; id: number } = {
-  firstName: "Kyaw Kyaw",
-  age: 21,
-  id: 12345,
-  // isFictional:true Can't assign
-};
-user.id=2120;
-// user.email='kaung@gmail.com' can't assign
-
-let person={
-  name:'Win Win',
-  score: 35,
+function addTwoNumbers(a:number,b:number):number{
+  return a+b;
 }
-person.name='Soe Moe';
-person.score=100;
-const score= person.score;
+const subtractTwoNumbers=(a:number, b:number):number=>{
+  return a-b;
+}
+
+addTwoNumbers(4,5);
+subtractTwoNumbers(1,6);
+
+const addAllNumbers=(items:number[]):void=>{
+  const total =items.reduce((a,c)=>a+c,0)
+  console.log(total)
+}
+
+addAllNumbers([5,7,3,14,4,11,2,10])
+
+// Return Type Interface
+const formatGreeting=(name:string,greeting:string):string=>{
+  return `${greeting}, ${name}さん`;
+}
+const greetingOne = formatGreeting('Kyaw Kyaw', 'Ohayou Gozaimasu');
+console.log(greetingOne);
 
 
 
