@@ -1,21 +1,23 @@
 "use strict";
-// Union Types
-//Having multiple types
-let someId;
-someId = 1;
-someId = "hello";
-// someId=true //throwError
-let email = null;
-email = "helloeuser@gmail.com";
-email = null;
-let userId;
-userId = "asfldasdf";
-userId = 1232223;
-// Union Type Pitfall
 function swapIdType(id) {
     // parseInt(id) //This function doesn't work because TS donesn't know if it is either string or number
-    return id;
+    if (typeof id === 'string') {
+        return parseInt(id);
+    }
+    else {
+        return id.toString();
+    }
 }
-swapIdType(userId);
+const idOne = swapIdType(1);
+const idTwo = swapIdType('1');
+console.log(idOne, idTwo);
+function logDetails(value) {
+    if (value.type === 'user') {
+        console.log(value.email, value.userName);
+    }
+    if (value.type == 'author') {
+        console.log(value.book, value.authorName);
+    }
+}
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js
