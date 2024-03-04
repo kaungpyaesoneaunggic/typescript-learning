@@ -1,45 +1,28 @@
-//Interfaces
-//interface is a model for variables
+// Type Aliases
+// e.g Tuples
+type Rgb = [number,number,number];
+function getRandomColor():Rgb{
+  const red = Math.floor(Math.random()*255); //meaning it will return from 1 to 255
+  const green = Math.floor(Math.random()*255);
+  const blue = Math.floor(Math.random()*255);
+  return[red,green,blue];
+}
+const colorOne = getRandomColor();
+const colorTwo = getRandomColor();
+console.log(colorOne,colorTwo);
 
-interface Author {
-  name: string;
-  avatar: string;
+// e.g Object Literals
+type User={
+  name:string,
+  score:number,
 }
 
-const authorOne: Author = { name: "Saung", avatar: "/img/src/authorOne.png" };
-
-interface Post {
-  title: string;
-  body: string;
-  tags: string[];
-  created_at: Date;
-  author: Author;
+const userOne:User ={name:'UserOne',score:80}
+function formatUser(user:User):void{
+  console.log(`${user.name} has a score of ${user.score}`)
 }
-const newPost: Post = {
-  title: "Something Interesting",
-  body: "A twenty line long paragraph",
-  author: authorOne,
-  tags: ["vanilla", "plot", "romance"],
-  created_at: new Date(),
-};
-
-// interface as parameter of functions
-function createPost(post: Post): void {
-  console.log(`created post ${post.title} written by ${post.author.name}`);
-}
-createPost(newPost);
-
-// interface with Arrays
-let posts: Post[] = [];
-
-posts.push({
-  title: "Hello World",
-  body: "Hello World is written as an intro to programming language",
-  author:{avatar:'img/src/imagetwo.png',name:'Kaung Pyae Sone Aung'},
-  created_at: new Date(),
-  tags:['programming']
-});
-posts.push(newPost)
+formatUser(userOne);
+formatUser({name:'UserTwo',score:90})
 
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js
