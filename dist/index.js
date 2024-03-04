@@ -1,21 +1,28 @@
 "use strict";
-//Tuples
-//Having assinged the types in order
-let person = ['Kyaw Kyaw', 25, true];
-// Tuples examples
-let hsla; //HSLA is a Color variable RGB
-hsla = [200, '100%', '50%', 1];
-let coordinates;
-coordinates = [220, 1050.8];
-function useCoords() {
-    const latitudes = 100;
-    const longtitudes = 200;
-    return [latitudes, longtitudes];
+//Interfaces
+//interface is a model for variables
+const authorOne = { name: "Saung", avatar: "/img/src/authorOne.png" };
+const newPost = {
+    title: "Something Interesting",
+    body: "A twenty line long paragraph",
+    author: authorOne,
+    tags: ["vanilla", "plot", "romance"],
+    created_at: new Date(),
+};
+// interface as parameter of functions
+function createPost(post) {
+    console.log(`created post ${post.title} written by ${post.author.name}`);
 }
-const [lat, long] = useCoords();
-// named Tuples
-let user;
-user = ['Soe Myint', 25];
-console.log(user[0]);
+createPost(newPost);
+// interface with Arrays
+let posts = [];
+posts.push({
+    title: "Hello World",
+    body: "Hello World is written as an intro to programming language",
+    author: { avatar: 'img/src/imagetwo.png', name: 'Kaung Pyae Sone Aung' },
+    created_at: new Date(),
+    tags: ['programming']
+});
+posts.push(newPost);
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js
