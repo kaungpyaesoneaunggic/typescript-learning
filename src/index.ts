@@ -1,24 +1,30 @@
-// any types
-let age:any
-age=3;
-age='Heart'
-age=true;
+//Tuples
+//Having assinged the types in order
+let person:[string,number,boolean]=['Kyaw Kyaw',25,true]
 
-let title;
-title=25;
-title={
-  hello:'world' 
+// Tuples examples
+let hsla :[number,string,string,number] //HSLA is a Color variable RGB
+hsla=[200,'100%','50%', 1]
+
+let coordinates:[number, number]
+coordinates=[220,1050.8]
+
+function useCoords():[number,number]{
+  const latitudes=  100
+  const longtitudes= 200
+  return [latitudes,longtitudes]
 }
+const [lat,long]=useCoords()
 
-// any types in array
-let things:any[]=['hello', true,35]
-things.push(true);
+// named Tuples
+let user:[name:string, age:number]
+user = ['Soe Myint',25]
+console.log(user[0])
 
-// funcions & any
-function addTogether(value:any):any{
-  return value+value;
-}
-console.log(addTogether('hello'))
+
+
+
+
 
 //to always compile when saved, tsc --watch
 // to always run js file, node --watch dist/index.js
